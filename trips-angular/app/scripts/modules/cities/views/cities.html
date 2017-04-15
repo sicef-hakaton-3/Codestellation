@@ -1,0 +1,29 @@
+<div layout="column" layout-padding ng-cloak swing-stack ng-if="!$root.loading">
+  <md-card
+    ng-repeat="city in [city]"
+    swing-card
+    swing-on-throwoutleft="vote(false)"
+    swing-on-throwoutright="vote(true)">
+
+    <img ng-src="{{getImageUrl(city.images)}}" class="md-card-image" alt="Washed Out">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{city.placeDetails.name}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>{{ city.final }}</p>
+      <p>
+        <img class="va-m" ng-src="{{ city.weather.list[0].weather[0].iconUrl }}" alt="">
+        <span class="temp">{{ city.weather.list[0].temp.day }} ªC</span>
+      </p>
+    </md-card-content>
+    <!-- <md-card-actions layout="column" layout-align="start">
+      <md-button ng-click="moreInfo($event, city)">More info</md-button>
+    </md-card-actions> -->
+  </md-card>
+
+</div>
+<div layout="column" layout-padding ng-cloak>
+  <md-button ui-sref="total-votes({id: groupId})">Finish</md-button>
+</div>

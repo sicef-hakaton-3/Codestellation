@@ -1,0 +1,37 @@
+<div flex-gt-sm="50" flex class="full-width">
+  <md-toolbar layout="row" class="md-hue-3">
+    <div class="md-toolbar-tools">
+      <span>Countries</span>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-list flex>
+      <md-subheader class="md-no-sticky">
+        <md-input-container md-no-float class="md-block header-search-fix">
+          <input ng-model="query" type="text" ng-change="getCountries(query)" placeholder="Search countries">
+          <md-icon md-font-set="material-icons">search</md-icon>
+        </md-input-container>
+      </md-subheader>
+      <!--<md-list-item class="md-3-line" ng-repeat="country in countries" ng-click="null">-->
+        <!--<img ng-src="{{country.face}}?{{$index}}" class="md-avatar" alt="{{country.who}}" />-->
+        <!--<div class="md-list-item-text" layout="column">-->
+          <!--<h3>{{ country.name }}</h3>-->
+          <!--&lt;!&ndash;<h4>{{ item.what }}</h4>&ndash;&gt;-->
+          <!--&lt;!&ndash;<p>{{ item.notes }}</p>&ndash;&gt;-->
+        <!--</div>-->
+      <!--</md-list-item>-->
+      <md-divider></md-divider>
+      <md-list-item ng-repeat="country in countries" class="md-2-line" ng-click="newGroup(country)">
+        <img ng-src="{{country.image}}?20" class="md-avatar" alt="{{country.name}}" />
+        <div class="md-list-item-text">
+          <h3>{{ country.name }}</h3>
+          <p>(click to select a country)</p>
+        </div>
+        <md-divider></md-divider>
+      </md-list-item>
+      <md-divider></md-divider>
+    </md-list>
+  </md-content>
+</div>
+
+<md-divider></md-divider>

@@ -1,0 +1,28 @@
+<div layout="column" layout-padding ng-cloak>
+  <br/>
+  <md-content class="md-no-momentum">
+    <md-card>
+      <img ng-src="{{group.photo}}" class="md-card-image" alt="Washed Out">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{group.country}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <!--people-->
+      </md-card-content>
+    </md-card>
+    <md-list>
+      <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+          <span>Matches</span>
+        </h2>
+      </md-toolbar>
+      <md-list-item ng-repeat="(placeId, votes) in grouppedVotes" class="noright">
+        <img alt="{{ votes[0].place.image }}" ng-src="{{ votes[0].place.image }}" class="md-avatar" />
+        <p>{{ votes[0].place.placeDetails.name }}</p>
+        <p class="floatright bluetext">{{votes.length}}</p>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>

@@ -1,0 +1,39 @@
+<div layout="column" layout-padding ng-cloak>
+  <md-card>
+    <img ng-src="{{group.photo}}" class="md-card-image" alt="Washed Out">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{group.country}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <!--people-->
+    </md-card-content>
+  </md-card>
+  <div flex-gt-sm="50" flex>
+      <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-raised md-warn md-primary full-width" ui-sref="cities({id: id})">Choose Destination</md-button>
+      </section>
+    <md-content>
+      <span class="make-it-smaller">Add people to your group</span>
+      <md-list flex>
+        <md-subheader class="md-no-sticky">
+          <md-input-container md-no-float class="md-block header-search-fix">
+            <input ng-model="person.username" type="text" placeholder="Search people">
+            <md-icon md-font-set="material-icons" ng-click="addPersonToGroup(person)">add</md-icon>
+          </md-input-container>
+        </md-subheader>
+        <md-divider></md-divider>
+        <md-list-item ng-repeat="member in group.members" class="md-2-line">
+          <img ng-src="{{member.image}}?20" class="md-avatar" alt="{{member.username}}" />
+          <div class="md-list-item-text">
+            <h3>{{member.username}}</h3>
+            <p>{{member.username}} is a good person ~</p>
+          </div>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+    </md-content>
+  </div>
+</div>

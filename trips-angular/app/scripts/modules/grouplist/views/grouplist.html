@@ -1,0 +1,28 @@
+<div layout="column" layout-padding ng-cloak>
+  <br/>
+  <md-content class="md-no-momentum">
+    <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+        <!-- <md-subheader class="md-no-sticky"> -->
+      <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-raised md-warn full-width startgroupbtn" ui-sref="country">Start new group</md-button>
+      </section>
+        <!-- </md-subheader> -->
+    </md-input-container>
+    <md-list>
+      <md-toolbar class="md-theme-light">
+         <h2 class="md-toolbar-tools">
+           <span>Trips</span>
+         </h2>
+      </md-toolbar>
+      <md-list-item ng-repeat="group in groups" ui-sref="group({id: group._id})" class="noright">
+        <img alt="{{ group.name }}" ng-src="{{ group.photo }}" class="md-avatar" />
+        <p>{{ group.country }}</p>
+        <p class="floatright bluetext">+{{group.members.length}}</p>
+        <!-- <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox> -->
+        <!-- <md-icon md-svg-icon="communication:email"  ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3" ></md-icon> -->
+        <!-- <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon> -->
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>
